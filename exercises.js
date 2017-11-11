@@ -10,7 +10,7 @@ Write a for-loop that will iterate through 20 numbers (starting at 1 and ending 
 */
 
 for (var i = 0; i<=20; i++){
-	console.log("Now serning " + i);
+	console.log("Now serving " + i);
 }
 
 
@@ -106,7 +106,15 @@ Note that every odd index value in `oopsArray` is currently `undefined`. Using a
 
 [ 'turn' , 'nope' , 'down' , 'nope' , 'for' , 'nope' , 'what' ]
 */
+var oopsArray = [ 'turn' , , 'down' , , 'for' , , 'what' ];
+for(var i = 0; i<oopsArray.length; i++){
+  console.log(oopsArray[i]);
+  if(i%2 ===1){
+    oopsArray[i] = "nope";
+  }
+}
 
+console.log(oopsArray);
 
 /* 8) Is It There Oops
 Using a for-loop, iterate through the Array stored at `oopsArray` backwards. Console.log your result. It should look like this:
@@ -119,6 +127,9 @@ down
 nope
 turn
 */
+for(var i = oopsArray.length - 1; i>=0; i--){
+  console.log(oopsArray[i]);
+}
 
 
 /* 9) Siesta Time
@@ -130,7 +141,18 @@ Next, write a function named `nap`. This function takes in a single parameter: `
 
 Inside of this function write a for-loop that will iterate through the `napSchedule` array and console.log the message: `ZzZzZzZz` if the schedule is `true`, otherwise the it will console.log the message: `Gotta get coding!` if the schedule is `false`.
 */
+var napSchedule = [false, false, true, false, true, true];
+function nap(schedule){
+  for(var i = 0; i <= napSchedule.length; i++){
+    if(napSchedule[i]===true){
+      console.log ("ZzZzZzZz");
+    }else{
+      console.log("Gotta get coding!");
+    }
+  }
+}
 
+nap(napSchedule);
 
 
 /* 10) Copy Pasta
@@ -144,8 +166,17 @@ Write a function named `copyArray` which takes two arguments: `originArray` and 
 
 Inside of this function write a for-loop that will iterate through the contents of the `originArray` and pushes each element of that array into `destinationArray`. Console.log your result.
 */
+var valuesArray = [99, 66, 829, 1941, 8, 76];
+var copyValuesArray = [];
+function copyArray(originArray, destinationArray){
+  for (var i=0; i<originArray.length; i++){
+    destinationArray.push(originArray[i]);
+  }
+  return destinationArray;
+}
 
-
+console.log(copyArray(valuesArray,copyValuesArray));
+console.log(copyValuesArray);
 
 /*Final Boss*/
 
@@ -153,6 +184,20 @@ Inside of this function write a for-loop that will iterate through the contents 
 Declare a variable named `topQuote` and assign it to a String value of your favorite one line quote.
 Write a function that will iterate through the string value and return the longest word in that quote. Console.log your result.
 */
+var topQuote = "Look for the silverlinning";
+function longestWord(str){
+  var strToArray = str.split(" "); 
+  var currentWord = ""; 
+  for(var i =0; i<strToArray.length; i++){ 
+    if(strToArray[i].length > currentWord.length){ 
+      currentWord = strToArray[i]; 
+    }
+  }
+  return currentWord;
+}
+
+console.log(longestWord(topQuote));
+
 
 
 
