@@ -228,6 +228,16 @@ Write a function that will capitalize the first letter in each word in the phras
 
 var myWay = "i've lived a life that's full, i've traveled each and every highway. but more, much more than this. i did it my way.";
 
+function capitalize(str){
+  var word = str.split(" ");
+  for(var i = 0; i<word.length; i++){
+    var letter = word[i].split("");
+    letter[0] = letter[0].toUpperCase();
+    word[i] = letter.join('');
+  }
+  return word.join(" ");
+}
+console.log(capitalize(myWay));
 
 
 /* 14) Back to School
@@ -240,4 +250,92 @@ The function will iterate through the `cohort` argument and check each student's
 If the `enrolled` property is set to `true` then change that student's `graduated` property to `true`. Otherwise, if `enrolled` is set to `false` then change `enrolled` to `true` leaving `graduated` alone and unchanged.
 Console.log your result.
 */
+
+var currentCohort = [
+
+  {
+
+    name: 'Doug',
+
+    graduated: false,
+
+    enrolled: true
+
+  },
+
+  {
+
+    name: 'Pat',
+
+    graduated: false,
+
+    enrolled: false
+
+  },
+
+  {
+
+    name: 'Marsha',
+
+    graduated: false,
+
+    enrolled: false
+
+  },
+
+  {
+
+    name: 'Moira',
+
+    graduated: false,
+
+    enrolled: true
+
+  },
+
+  {
+
+    name: 'Ben',
+
+    graduated: false,
+
+    enrolled: true
+
+  },
+
+  {
+
+    name: 'Nigel the Giraffe',
+
+    graduated: false,
+
+    enrolled: false
+
+  },
+
+
+  {
+
+    name: 'Brandon the Shark',
+
+    graduated: false,
+
+    enrolled: true
+
+  }
+
+];
+ 
+function graduateAndSetNewClass(cohort) {
+ for (var i=0; i<currentCohort.length; i++){
+  if (cohort[i].enrolled === true){
+    cohort[i].graduated = true;
+  }else{
+    cohort[i].graduated =false;
+  }
+  return cohort;
+}
+}
+console.log(graduateAndSetNewClass(currentCohort));
+
 
